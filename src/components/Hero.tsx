@@ -31,7 +31,7 @@ export default function Hero() {
 
       <div className="container" style={{ position: 'relative', padding: '100px 24px' }}>
 
-        <div className="label">AI &amp; Automation Consulting</div>
+        <div className="label">AI &amp; Automation</div>
 
         <h1 style={{
           fontSize: 'clamp(40px, 6vw, 78px)',
@@ -40,7 +40,7 @@ export default function Hero() {
           maxWidth: 820,
           marginBottom: 28,
         }}>
-          I implement AI &amp; automation{' '}
+          We implement AI &amp; automation{' '}
           <span style={{ color: '#C8FF00' }}>directly in your business.</span>
         </h1>
 
