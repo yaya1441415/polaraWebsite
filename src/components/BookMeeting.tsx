@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { ArrowRight } from 'lucide-react'
 
 export default function BookMeeting() {
   useEffect(() => {
