@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
+import Features from './components/Features'
 import BookMeeting from './components/BookMeeting'
 import Footer from './components/Footer'
 import './index.css'
@@ -12,6 +13,7 @@ export default function App() {
       <main>
         <Hero />
         <HowItWorks />
+        <Features />
         <BookMeeting />
       </main>
       <Footer />

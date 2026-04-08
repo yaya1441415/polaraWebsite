@@ -1,85 +1,118 @@
-import { Brain, FileText, UserCheck, RefreshCcw, Globe, Lock } from 'lucide-react'
+import { Target, Star, Radio, UserCheck, BarChart2, Plug } from 'lucide-react'
 
 const features = [
   {
-    icon: <Brain size={22} />,
-    title: 'Trained on your content',
-    desc: 'Upload policies, FAQs, pricing guides. The AI learns your products and answers with 100% accuracy.',
-    color: '#2563eb',
+    icon: <Target size={20} />,
+    title: 'Precision targeting',
+    desc: 'We profile your ideal customer by industry, size, location, and intent — so the agent only goes after people who actually need what you sell.',
+    color: '#2563EB',
+    bg: '#EFF6FF',
   },
   {
-    icon: <FileText size={22} />,
-    title: 'Policy summarizer',
-    desc: 'Dense insurance documents made simple. Clients finally understand what they\'re buying.',
-    color: '#7c3aed',
+    icon: <Star size={20} />,
+    title: 'AI lead scoring',
+    desc: 'Every prospect is scored on intent signals before it reaches you. No more wasting time on leads that were never going to convert.',
+    color: '#D97706',
+    bg: '#FFFBEB',
   },
   {
-    icon: <UserCheck size={22} />,
-    title: 'Lead qualification',
-    desc: 'The bot collects name, coverage needs, and budget — then delivers a warm lead profile to your team.',
-    color: '#0891b2',
+    icon: <Radio size={20} />,
+    title: 'Multi-channel outreach',
+    desc: 'The agent works across LinkedIn, email, and web — finding prospects wherever they are and engaging them at the right moment.',
+    color: '#0369A1',
+    bg: '#F0F9FF',
   },
   {
-    icon: <RefreshCcw size={22} />,
-    title: 'Always up to date',
-    desc: 'Update your content anytime and the bot reflects it instantly. No retraining delays.',
+    icon: <UserCheck size={20} />,
+    title: 'Instant qualification',
+    desc: 'Leads are screened for budget, timeline, and buying intent before they land in your inbox. You only talk to people ready to move forward.',
     color: '#059669',
+    bg: '#ECFDF5',
   },
   {
-    icon: <Globe size={22} />,
-    title: 'Multilingual support',
-    desc: 'Serve clients in their language. The bot auto-detects and responds in French, Arabic, Spanish, and more.',
-    color: '#d97706',
+    icon: <BarChart2 size={20} />,
+    title: 'Daily lead reports',
+    desc: 'Wake up to a fresh, ranked list of qualified prospects every morning. Full visibility into pipeline health and conversion data.',
+    color: '#7C3AED',
+    bg: '#F5F3FF',
   },
   {
-    icon: <Lock size={22} />,
-    title: 'Secure & compliant',
-    desc: 'Data encrypted at rest and in transit. GDPR-ready with configurable data retention policies.',
-    color: '#dc2626',
+    icon: <Plug size={20} />,
+    title: 'CRM ready',
+    desc: 'Leads delivered directly into your existing CRM or inbox. No new tools to learn. Your workflow stays the same — just fuller.',
+    color: '#2563EB',
+    bg: '#EFF6FF',
   },
 ]
 
 export default function Features() {
   return (
-    <section id="features" className="section">
+    <section style={{
+      background: '#FFFFFF',
+      padding: '120px 0',
+      borderTop: '1px solid #E2E8F0',
+    }}>
       <div className="container">
-        <div style={{ marginBottom: 64 }}>
-          <div className="section-label">Features</div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 24 }}>
-            <h2 className="section-title" style={{ maxWidth: 480 }}>
-              Everything your insurance team needs
+
+        <div style={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          marginBottom: 72,
+          gap: 32,
+          flexWrap: 'wrap',
+        }}>
+          <div>
+            <div className="label">What you get</div>
+            <h2 style={{
+              fontSize: 'clamp(32px, 4vw, 54px)',
+              fontWeight: 800,
+              color: '#0F172A',
+              maxWidth: 480,
+            }}>
+              Everything your pipeline needs.
             </h2>
-            <p className="section-sub" style={{ maxWidth: 380 }}>
-              Built specifically for insurance — not a generic chatbot bolted onto a website.
-            </p>
           </div>
+          <p style={{
+            fontSize: 17,
+            color: '#475569',
+            maxWidth: 340,
+            lineHeight: 1.75,
+          }}>
+            Built for SMBs who are done chasing cold leads and ready
+            to let an AI agent do the heavy lifting.
+          </p>
         </div>
 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 24,
+          gap: 20,
         }} className="features-grid">
           {features.map(f => (
             <div key={f.title} style={{
-              padding: '32px 28px',
+              padding: '36px 30px',
               borderRadius: 16,
-              border: '1px solid #e2e8f0',
-              background: 'white',
-              transition: 'border-color 0.2s, box-shadow 0.2s',
+              border: '1px solid #E2E8F0',
+              background: '#FAFAFA',
+              transition: 'transform 0.2s, box-shadow 0.2s, background 0.2s',
+              boxShadow: '0 2px 8px rgba(15,23,42,0.04)',
             }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = f.color + '44'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = `0 4px 24px ${f.color}18`
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(15,23,42,0.09)'
+                ;(e.currentTarget as HTMLElement).style.background = '#FFFFFF'
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = '#e2e8f0'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 2px 8px rgba(15,23,42,0.04)'
+                ;(e.currentTarget as HTMLElement).style.background = '#FAFAFA'
               }}
             >
               <div style={{
-                width: 48, height: 48,
-                background: f.color + '15',
+                width: 46, height: 46,
+                background: f.bg,
+                border: `1px solid ${f.color}22`,
                 borderRadius: 12,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 color: f.color,
@@ -88,13 +121,16 @@ export default function Features() {
                 {f.icon}
               </div>
               <h3 style={{
-                fontSize: 17, fontWeight: 700,
-                color: '#0f172a', marginBottom: 10,
-                letterSpacing: '-0.01em',
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 17,
+                fontWeight: 700,
+                color: '#0F172A',
+                marginBottom: 10,
+                letterSpacing: '-0.02em',
               }}>
                 {f.title}
               </h3>
-              <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.7 }}>
+              <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.75 }}>
                 {f.desc}
               </p>
             </div>

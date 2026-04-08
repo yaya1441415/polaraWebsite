@@ -1,4 +1,11 @@
 import { useEffect } from 'react'
+import { CheckCircle2 } from 'lucide-react'
+
+const perks = [
+  'We map your exact lead potential in 30 minutes',
+  'You see how the AI agent works — live',
+  'No pitch. No contract. Just a clear plan.',
+]
 
 export default function BookMeeting() {
   useEffect(() => {
@@ -11,65 +18,89 @@ export default function BookMeeting() {
 
   return (
     <section id="book" style={{
-      background: '#0A0A0A',
+      background: '#F0F7FF',
       padding: '120px 0',
-      borderTop: '1px solid #1A1A1A',
+      borderTop: '1px solid #E2E8F0',
     }}>
       <div className="container">
 
-        <div style={{ marginBottom: 64 }}>
-          <div className="label">Book a Call</div>
-          <h2 style={{
-            fontSize: 'clamp(32px, 4vw, 58px)',
-            fontWeight: 700,
-            color: '#F5F5F5',
-            maxWidth: 580,
-            marginBottom: 20,
-          }}>
-            One call.<br />That's all it takes.
-          </h2>
-          <p style={{
-            fontSize: 17,
-            color: '#555555',
-            maxWidth: 440,
-            lineHeight: 1.75,
-            marginBottom: 24,
-          }}>
-            Book a free 30-minute audit call. No pitch. No pressure.
-            Just clarity on where your money is going.
-          </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 80,
+          alignItems: 'center',
+        }} className="book-grid">
+          <div>
+            <div className="label">Book a Call</div>
+            <h2 style={{
+              fontSize: 'clamp(32px, 4vw, 56px)',
+              fontWeight: 800,
+              color: '#0F172A',
+              marginBottom: 20,
+              lineHeight: 1.08,
+            }}>
+              One call.<br />
+              <span style={{ color: '#2563EB' }}>Your pipeline changes.</span>
+            </h2>
+            <p style={{
+              fontSize: 17,
+              color: '#475569',
+              maxWidth: 420,
+              lineHeight: 1.75,
+              marginBottom: 32,
+            }}>
+              Book a free 30-minute strategy call. We'll map out exactly how many
+              leads your market can generate — no fluff, no pitch.
+            </p>
 
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
+              {perks.map(p => (
+                <div key={p} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <CheckCircle2 size={18} color="#2563EB" strokeWidth={2.5} />
+                  <span style={{ fontSize: 15, color: '#1E293B', fontWeight: 500 }}>{p}</span>
+                </div>
+              ))}
+            </div>
+
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              background: '#FFFBEB',
+              border: '1px solid #FDE68A',
+              borderRadius: 10,
+              padding: '12px 18px',
+            }}>
+              <span style={{ fontSize: 16 }}>🔒</span>
+              <span style={{ fontSize: 13, color: '#92400E', fontWeight: 700 }}>
+                No qualified leads delivered, no invoice.
+              </span>
+            </div>
+          </div>
+
+          {/* Calendly embed */}
           <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 10,
-            background: 'rgba(200, 255, 0, 0.06)',
-            border: '1px solid rgba(200, 255, 0, 0.2)',
-            borderRadius: 8,
-            padding: '10px 16px',
+            background: '#ffffff',
+            borderRadius: 20,
+            overflow: 'hidden',
+            border: '1px solid #DBEAFE',
+            boxShadow: '0 8px 40px rgba(37,99,235,0.1)',
           }}>
-            <span style={{ fontSize: 15 }}>🔒</span>
-            <span style={{ fontSize: 13, color: '#C8FF00', fontWeight: 600 }}>
-              No results, no invoice. Simple as that.
-            </span>
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/yahyaouchch/chatbot-insurance"
+              style={{ minWidth: 320, height: 680 }}
+            />
           </div>
         </div>
 
-        {/* Calendly embed */}
-        <div style={{
-          background: '#ffffff',
-          borderRadius: 14,
-          overflow: 'hidden',
-          border: '1px solid #1A1A1A',
-        }}>
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/yahyaouchch/chatbot-insurance"
-            style={{ minWidth: 320, height: 700 }}
-          />
-        </div>
-
       </div>
+
+      <style>{`
+        @media (max-width: 800px) {
+          .book-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+      `}</style>
     </section>
   )
 }

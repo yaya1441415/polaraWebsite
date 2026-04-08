@@ -1,27 +1,33 @@
 const steps = [
   {
     number: '01',
-    title: 'We talk',
-    desc: 'Book a 30-minute call. You walk me through how your business runs — I listen for where AI can make the biggest difference.',
+    title: 'We learn your business',
+    desc: 'Tell us your ideal customer, your offer, and your market. We build a precise lead profile tailored to your business — nothing generic.',
+    accent: '#2563EB',
+    bg: '#F0F7FF',
   },
   {
     number: '02',
-    title: 'I find the opportunity',
-    desc: 'I map your operations and identify exactly where implementing AI will save you the most time and money — no guesswork.',
+    title: 'The AI agent goes to work',
+    desc: 'Our agent targets your ideal customers across multiple channels, engages them automatically, and qualifies them before you ever pick up the phone.',
+    accent: '#0369A1',
+    bg: '#F0F9FF',
   },
   {
     number: '03',
-    title: 'I implement the AI',
-    desc: 'I build and deploy a custom AI system directly in your business. It runs 24/7. You keep every dollar it saves and every hour it frees.',
+    title: 'You get warm leads',
+    desc: 'Receive a steady stream of pre-qualified prospects ready to buy. You focus on closing deals. We handle the entire pipeline.',
+    accent: '#D97706',
+    bg: '#FFFBEB',
   },
 ]
 
 export default function HowItWorks() {
   return (
     <section style={{
-      background: '#0A0A0A',
+      background: '#F8FAFC',
       padding: '120px 0',
-      borderTop: '1px solid #1A1A1A',
+      borderTop: '1px solid #E2E8F0',
     }}>
       <div className="container">
 
@@ -36,53 +42,70 @@ export default function HowItWorks() {
           <div>
             <div className="label">The Process</div>
             <h2 style={{
-              fontSize: 'clamp(32px, 4vw, 52px)',
-              fontWeight: 700,
-              color: '#F5F5F5',
+              fontSize: 'clamp(32px, 4vw, 54px)',
+              fontWeight: 800,
+              color: '#0F172A',
             }}>
-              Simple.<br />Fast.<br />Precise.
+              Simple.<br />Targeted.<br />Consistent.
             </h2>
           </div>
           <p style={{
-            fontSize: 16,
-            color: '#555555',
+            fontSize: 17,
+            color: '#475569',
             maxWidth: 340,
             lineHeight: 1.75,
           }}>
-            No retainers. No decks. No wasted time.
-            Just a focused process that ends with real AI running in your business.
+            No cold calling. No ad spend. No guesswork.
+            Just a proven AI system that delivers qualified leads straight to your inbox.
           </p>
         </div>
 
         <div className="steps-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 1,
-          background: '#1A1A1A',
-          border: '1px solid #1A1A1A',
-          borderRadius: 14,
-          overflow: 'hidden',
+          gap: 20,
         }}>
           {steps.map((step) => (
             <div key={step.number} style={{
-              background: '#0A0A0A',
-              padding: '48px 36px',
-            }}>
+              background: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              borderRadius: 16,
+              padding: '44px 36px',
+              boxShadow: '0 2px 12px rgba(15,23,42,0.05)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(15,23,42,0.1)'
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(15,23,42,0.05)'
+              }}
+            >
               <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 44,
+                height: 44,
+                background: step.bg,
+                border: `1.5px solid ${step.accent}33`,
+                borderRadius: 10,
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 12,
-                fontWeight: 700,
-                color: '#C8FF00',
-                letterSpacing: '0.1em',
-                marginBottom: 32,
+                fontSize: 13,
+                fontWeight: 800,
+                color: step.accent,
+                marginBottom: 28,
+                letterSpacing: '0.04em',
               }}>
                 {step.number}
               </div>
               <h3 style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 22,
+                fontSize: 21,
                 fontWeight: 700,
-                color: '#F5F5F5',
+                color: '#0F172A',
                 marginBottom: 14,
                 letterSpacing: '-0.02em',
               }}>
@@ -90,7 +113,7 @@ export default function HowItWorks() {
               </h3>
               <p style={{
                 fontSize: 15,
-                color: '#666666',
+                color: '#475569',
                 lineHeight: 1.75,
               }}>
                 {step.desc}
