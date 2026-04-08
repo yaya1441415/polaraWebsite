@@ -13,7 +13,6 @@ export default function App() {
       <main>
         <Hero />
         <HowItWorks />
-        {/* <Features /> */}
         <BookMeeting />
       </main>
       <Footer />
