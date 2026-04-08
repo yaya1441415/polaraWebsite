@@ -1,47 +1,47 @@
-import { Target, Star, Radio, UserCheck, BarChart2, Plug } from 'lucide-react'
+import { Linkedin, Mail, Search, Mic, SlidersHorizontal, Handshake } from 'lucide-react'
 
 const features = [
   {
-    icon: <Target size={20} />,
-    title: 'Precision targeting',
-    desc: 'We profile your ideal customer by industry, size, location, and intent — so the agent only goes after people who actually need what you sell.',
+    icon: <Search size={20} />,
+    title: 'Intent-based prospect discovery',
+    desc: 'The agent identifies companies with active hiring pain — analysing job postings, layoff signals, growth indicators, and leadership changes to find staffing agencies\' best-fit clients.',
     color: '#2563EB',
     bg: '#EFF6FF',
   },
   {
-    icon: <Star size={20} />,
-    title: 'AI lead scoring',
-    desc: 'Every prospect is scored on intent signals before it reaches you. No more wasting time on leads that were never going to convert.',
-    color: '#D97706',
-    bg: '#FFFBEB',
-  },
-  {
-    icon: <Radio size={20} />,
-    title: 'Multi-channel outreach',
-    desc: 'The agent works across LinkedIn, email, and web — finding prospects wherever they are and engaging them at the right moment.',
+    icon: <SlidersHorizontal size={20} />,
+    title: 'Role & industry-specific hooks',
+    desc: 'Outreach is tailored to the prospect\'s exact role — a Head of Talent gets a different message than a COO. Every hook is grounded in their real situation, not a generic pitch.',
     color: '#0369A1',
     bg: '#F0F9FF',
   },
   {
-    icon: <UserCheck size={20} />,
-    title: 'Instant qualification',
-    desc: 'Leads are screened for budget, timeline, and buying intent before they land in your inbox. You only talk to people ready to move forward.',
-    color: '#059669',
-    bg: '#ECFDF5',
-  },
-  {
-    icon: <BarChart2 size={20} />,
-    title: 'Daily lead reports',
-    desc: 'Wake up to a fresh, ranked list of qualified prospects every morning. Full visibility into pipeline health and conversion data.',
+    icon: <Mail size={20} />,
+    title: 'Email sequences that convert',
+    desc: 'Multi-step email campaigns written and sent by the agent. Each follow-up adapts based on opens, clicks, and replies — never feeling like a blast, always feeling personal.',
     color: '#7C3AED',
     bg: '#F5F3FF',
   },
   {
-    icon: <Plug size={20} />,
-    title: 'CRM ready',
-    desc: 'Leads delivered directly into your existing CRM or inbox. No new tools to learn. Your workflow stays the same — just fuller.',
-    color: '#2563EB',
+    icon: <Linkedin size={20} />,
+    title: 'LinkedIn outreach automation',
+    desc: 'The agent manages LinkedIn connection requests, follow-up messages, and engagement — coordinated with email to create a coherent, persistent presence without overwhelming prospects.',
+    color: '#0A66C2',
     bg: '#EFF6FF',
+  },
+  {
+    icon: <Mic size={20} />,
+    title: 'Conversational qualification',
+    desc: 'When a prospect engages, the agent handles initial back-and-forth to confirm budget, timeline, and hiring needs. Only qualified opportunities get escalated to your team.',
+    color: '#059669',
+    bg: '#ECFDF5',
+  },
+  {
+    icon: <Handshake size={20} />,
+    title: 'Clean handoff to your recruiters',
+    desc: 'Every warm lead arrives with a full research brief — pain points, conversation history, and a qualification summary. Your team walks into every call already prepared.',
+    color: '#D97706',
+    bg: '#FFFBEB',
   },
 ]
 
@@ -63,14 +63,14 @@ export default function Features() {
           flexWrap: 'wrap',
         }}>
           <div>
-            <div className="label">What you get</div>
+            <div className="label">Capabilities</div>
             <h2 style={{
               fontSize: 'clamp(32px, 4vw, 54px)',
               fontWeight: 800,
               color: '#0F172A',
-              maxWidth: 480,
+              maxWidth: 520,
             }}>
-              Everything your pipeline needs.
+              Everything a top SDR does.<br />Done by AI.
             </h2>
           </div>
           <p style={{
@@ -79,8 +79,8 @@ export default function Features() {
             maxWidth: 340,
             lineHeight: 1.75,
           }}>
-            Built for SMBs who are done chasing cold leads and ready
-            to let an AI agent do the heavy lifting.
+            Built specifically for staffing and recruiting agencies —
+            not a generic outreach tool bolted onto a CRM.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function Features() {
               </div>
               <h3 style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 17,
+                fontSize: 16,
                 fontWeight: 700,
                 color: '#0F172A',
                 marginBottom: 10,

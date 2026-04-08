@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import { CheckCircle2 } from 'lucide-react'
 
 const perks = [
-  'We map your exact lead potential in 30 minutes',
-  'You see how the AI agent works — live',
-  'No pitch. No contract. Just a clear plan.',
+  'We show you a live demo built for staffing agencies',
+  'You see real prospect research the agent produces',
+  'We map out your outreach sequences together',
+  'No pitch. No contract. Just a working prototype.',
 ]
 
 export default function BookMeeting() {
@@ -31,16 +32,16 @@ export default function BookMeeting() {
           alignItems: 'center',
         }} className="book-grid">
           <div>
-            <div className="label">Book a Call</div>
+            <div className="label">Book a Demo</div>
             <h2 style={{
-              fontSize: 'clamp(32px, 4vw, 56px)',
+              fontSize: 'clamp(32px, 4vw, 54px)',
               fontWeight: 800,
               color: '#0F172A',
               marginBottom: 20,
-              lineHeight: 1.08,
+              lineHeight: 1.1,
             }}>
-              One call.<br />
-              <span style={{ color: '#2563EB' }}>Your pipeline changes.</span>
+              See your AI SDR<br />
+              <span style={{ color: '#2563EB' }}>in action.</span>
             </h2>
             <p style={{
               fontSize: 17,
@@ -49,15 +50,15 @@ export default function BookMeeting() {
               lineHeight: 1.75,
               marginBottom: 32,
             }}>
-              Book a free 30-minute strategy call. We'll map out exactly how many
-              leads your market can generate — no fluff, no pitch.
+              Book a free 30-minute demo. We'll show you exactly how the agent
+              researches, writes, and reaches out — tailored live to your agency's niche.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
               {perks.map(p => (
-                <div key={p} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <CheckCircle2 size={18} color="#2563EB" strokeWidth={2.5} />
-                  <span style={{ fontSize: 15, color: '#1E293B', fontWeight: 500 }}>{p}</span>
+                <div key={p} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                  <CheckCircle2 size={18} color="#2563EB" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 2 }} />
+                  <span style={{ fontSize: 15, color: '#1E293B', fontWeight: 500, lineHeight: 1.5 }}>{p}</span>
                 </div>
               ))}
             </div>
@@ -73,7 +74,7 @@ export default function BookMeeting() {
             }}>
               <span style={{ fontSize: 16 }}>🔒</span>
               <span style={{ fontSize: 13, color: '#92400E', fontWeight: 700 }}>
-                No qualified leads delivered, no invoice.
+                No meetings booked, no invoice. Simple as that.
               </span>
             </div>
           </div>

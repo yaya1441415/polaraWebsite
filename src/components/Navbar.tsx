@@ -26,7 +26,7 @@ export default function Navbar() {
         </span>
 
         <a href="#book" className="btn-primary" style={{ padding: '9px 22px', fontSize: 13 }}>
-          Get Free Audit
+          Book a Demo
         </a>
       </div>
     </nav>

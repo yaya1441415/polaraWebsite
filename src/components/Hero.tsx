@@ -1,9 +1,10 @@
-import { ArrowRight, TrendingUp, Zap, Users } from 'lucide-react'
+import { ArrowRight, Search, MessageSquare, GitBranch, UserCheck } from 'lucide-react'
 
-const stats = [
-  { icon: <TrendingUp size={16} />, value: '3x', label: 'more leads on average' },
-  { icon: <Zap size={16} />, value: '24/7', label: 'agent works non-stop' },
-  { icon: <Users size={16} />, value: '100%', label: 'pre-qualified prospects' },
+const pills = [
+  { icon: <Search size={13} />, label: 'Deep lead research' },
+  { icon: <MessageSquare size={13} />, label: 'Hyper-personalised outreach' },
+  { icon: <GitBranch size={13} />, label: 'Multi-channel sequences' },
+  { icon: <UserCheck size={13} />, label: 'Automated qualification' },
 ]
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Subtle blue glow top-right */}
+      {/* Blue glow top-right */}
       <div style={{
         position: 'absolute',
         top: '-15%', right: '-10%',
@@ -36,37 +37,59 @@ export default function Hero() {
 
       <div className="container" style={{ position: 'relative', padding: '100px 24px' }}>
 
-        <div className="label">AI Lead Generation for SMBs</div>
+        <div className="label">AI SDR Agent · Staffing &amp; Recruiting</div>
 
         <h1 style={{
-          fontSize: 'clamp(42px, 6.5vw, 82px)',
+          fontSize: 'clamp(42px, 6vw, 80px)',
           fontWeight: 800,
           color: '#0F172A',
           maxWidth: 860,
           marginBottom: 28,
           lineHeight: 1.06,
         }}>
-          We build the AI agent that fills your pipeline with{' '}
-          <span style={{ color: '#2563EB' }}>qualified leads.</span>
+          Your AI Sales Rep that books meetings{' '}
+          <span style={{ color: '#2563EB' }}>while your recruiters recruit.</span>
         </h1>
 
         <p style={{
           fontSize: 19,
           color: '#475569',
-          maxWidth: 520,
+          maxWidth: 560,
           lineHeight: 1.7,
-          marginBottom: 48,
+          marginBottom: 40,
         }}>
-          We deploy a custom AI agent that finds, engages, and qualifies leads
-          for your business — 24/7, without you lifting a finger.
+          We build a custom AI SDR Agent for your staffing agency. It researches prospects
+          deeply, writes personalised outreach, runs multi-channel sequences, and
+          qualifies leads — handing you only the conversations worth having.
         </p>
+
+        {/* Capability pills */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 44 }}>
+          {pills.map(p => (
+            <div key={p.label} style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 7,
+              background: '#F0F7FF',
+              border: '1px solid #DBEAFE',
+              borderRadius: 100,
+              padding: '7px 14px',
+              fontSize: 13,
+              fontWeight: 600,
+              color: '#1D4ED8',
+            }}>
+              {p.icon}
+              {p.label}
+            </div>
+          ))}
+        </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 28 }}>
           <a href="#book" className="btn-primary">
-            Get Your Free Lead Audit <ArrowRight size={16} />
+            See It In Action <ArrowRight size={16} />
           </a>
           <span style={{ fontSize: 14, color: '#94A3B8' }}>
-            30-min call · No commitment
+            30-min demo · No commitment
           </span>
         </div>
 
@@ -75,54 +98,15 @@ export default function Hero() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 10,
-          background: '#FFF7ED',
+          background: '#FFFBEB',
           border: '1px solid #FDE68A',
           borderRadius: 10,
           padding: '11px 18px',
-          marginBottom: 64,
         }}>
           <span style={{ fontSize: 16 }}>🔒</span>
           <span style={{ fontSize: 13, color: '#92400E', fontWeight: 700 }}>
-            You don't pay until you get qualified leads.
+            You don't pay until the agent books you qualified meetings.
           </span>
-        </div>
-
-        {/* Stats row */}
-        <div style={{
-          display: 'flex',
-          gap: 40,
-          flexWrap: 'wrap',
-          paddingTop: 32,
-          borderTop: '1px solid #E2E8F0',
-        }}>
-          {stats.map(s => (
-            <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{
-                width: 36, height: 36,
-                background: '#2563EB',
-                borderRadius: 8,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: '#fff',
-                flexShrink: 0,
-              }}>
-                {s.icon}
-              </div>
-              <div>
-                <div style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
-                  color: '#0F172A',
-                  lineHeight: 1,
-                }}>
-                  {s.value}
-                </div>
-                <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 2 }}>
-                  {s.label}
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
       </div>

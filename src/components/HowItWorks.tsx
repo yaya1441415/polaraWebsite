@@ -1,22 +1,29 @@
 const steps = [
   {
     number: '01',
-    title: 'We learn your business',
-    desc: 'Tell us your ideal customer, your offer, and your market. We build a precise lead profile tailored to your business — nothing generic.',
+    title: 'Deep lead research',
+    desc: 'The agent goes far beyond job titles and company size. It analyses LinkedIn activity, company news, hiring trends, podcasts, and industry reports to surface specific pain points — so every outreach has a real, relevant hook.',
     accent: '#2563EB',
-    bg: '#F0F7FF',
+    bg: '#EFF6FF',
   },
   {
     number: '02',
-    title: 'The AI agent goes to work',
-    desc: 'Our agent targets your ideal customers across multiple channels, engages them automatically, and qualifies them before you ever pick up the phone.',
+    title: 'Hyper-personalised messaging',
+    desc: 'Using what it learned, the agent writes outreach that speaks directly to each prospect\'s role, challenges, and current priorities. No templates. No generic copy. Messages that feel like they were written by your best salesperson — at scale.',
     accent: '#0369A1',
     bg: '#F0F9FF',
   },
   {
     number: '03',
-    title: 'You get warm leads',
-    desc: 'Receive a steady stream of pre-qualified prospects ready to buy. You focus on closing deals. We handle the entire pipeline.',
+    title: 'Multi-channel sequence orchestration',
+    desc: 'The agent runs coordinated sequences across email, LinkedIn, and more. It adapts timing and messaging based on how each prospect engages — following up intelligently without ever feeling like spam.',
+    accent: '#7C3AED',
+    bg: '#F5F3FF',
+  },
+  {
+    number: '04',
+    title: 'Qualification & handoff',
+    desc: 'When a prospect shows interest, the agent engages them in natural conversational qualification — confirming budget, urgency, and fit. Only genuinely warm leads get passed to your team. You close. The agent does everything else.',
     accent: '#D97706',
     bg: '#FFFBEB',
   },
@@ -40,29 +47,30 @@ export default function HowItWorks() {
           flexWrap: 'wrap',
         }}>
           <div>
-            <div className="label">The Process</div>
+            <div className="label">How it works</div>
             <h2 style={{
               fontSize: 'clamp(32px, 4vw, 54px)',
               fontWeight: 800,
               color: '#0F172A',
             }}>
-              Simple.<br />Targeted.<br />Consistent.
+              Research.<br />Personalise.<br />Close.
             </h2>
           </div>
           <p style={{
             fontSize: 17,
             color: '#475569',
-            maxWidth: 340,
+            maxWidth: 360,
             lineHeight: 1.75,
           }}>
-            No cold calling. No ad spend. No guesswork.
-            Just a proven AI system that delivers qualified leads straight to your inbox.
+            Your AI SDR runs the full top-of-funnel — from finding the right
+            prospects to handing off warm, qualified conversations to your team.
           </p>
         </div>
 
+        {/* 2x2 grid for 4 steps */}
         <div className="steps-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           gap: 20,
         }}>
           {steps.map((step) => (
@@ -70,7 +78,7 @@ export default function HowItWorks() {
               background: '#FFFFFF',
               border: '1px solid #E2E8F0',
               borderRadius: 16,
-              padding: '44px 36px',
+              padding: '44px 40px',
               boxShadow: '0 2px 12px rgba(15,23,42,0.05)',
               transition: 'transform 0.2s, box-shadow 0.2s',
             }}
@@ -114,7 +122,7 @@ export default function HowItWorks() {
               <p style={{
                 fontSize: 15,
                 color: '#475569',
-                lineHeight: 1.75,
+                lineHeight: 1.8,
               }}>
                 {step.desc}
               </p>
