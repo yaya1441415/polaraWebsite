@@ -183,7 +183,7 @@ function Header({ view, dispatched, tripCount, assignedCount }: {
 
 // ─── Trips Table ──────────────────────────────────────────────────────────────
 
-function TripsTable({ dispatched, byTrip }: { dispatched: boolean; byTrip: Record<string, string> }) {
+function TripsTable({ byTrip }: { dispatched: boolean; byTrip: Record<string, string> }) {
   const [filter, setFilter] = useState<'all' | 'unassigned' | 'assigned'>('all')
 
   const filtered = TRIPS.filter(t => {
@@ -286,7 +286,7 @@ function TripsTable({ dispatched, byTrip }: { dispatched: boolean; byTrip: Recor
 
 // ─── Drivers View ─────────────────────────────────────────────────────────────
 
-function DriversView({ dispatched, byDriver, byTrip }: {
+function DriversView({ dispatched, byDriver }: {
   dispatched: boolean
   byDriver: Record<string, string[]>
   byTrip: Record<string, string>
