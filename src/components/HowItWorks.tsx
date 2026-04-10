@@ -1,29 +1,29 @@
 const steps = [
   {
     number: '01',
-    title: 'Deep lead research',
-    desc: 'The agent goes far beyond job titles and company size. It analyses LinkedIn activity, company news, hiring trends, podcasts, and industry reports to surface specific pain points — so every outreach has a real, relevant hook.',
+    title: 'Connect your operation',
+    desc: 'DispatchIQ plugs into your broker feeds (ModivCare, Veyo, MTM), imports your driver roster and vehicle types, and syncs your compliance requirements. Setup takes one day — not weeks.',
     accent: '#2563EB',
     bg: '#EFF6FF',
   },
   {
     number: '02',
-    title: 'Hyper-personalised messaging',
-    desc: 'Using what it learned, the agent writes outreach that speaks directly to each prospect\'s role, challenges, and current priorities. No templates. No generic copy. Messages that feel like they were written by your best salesperson — at scale.',
+    title: 'The agent assigns in real time',
+    desc: 'When a trip comes in, DispatchIQ instantly evaluates every available driver — checking location, vehicle type, compliance status, and current load. It makes the assignment and notifies the driver automatically. No dispatcher required.',
     accent: '#0369A1',
     bg: '#F0F9FF',
   },
   {
     number: '03',
-    title: 'Multi-channel sequence orchestration',
-    desc: 'The agent runs coordinated sequences across email, LinkedIn, and more. It adapts timing and messaging based on how each prospect engages — following up intelligently without ever feeling like spam.',
+    title: 'It adapts when things change',
+    desc: 'Driver calls out? The agent reassigns. Last-minute trip added? It finds the best available slot. Cancellation? It frees the driver and re-optimises the route. All without anyone picking up the phone.',
     accent: '#7C3AED',
     bg: '#F5F3FF',
   },
   {
     number: '04',
-    title: 'Qualification & handoff',
-    desc: 'When a prospect shows interest, the agent engages them in natural conversational qualification — confirming budget, urgency, and fit. Only genuinely warm leads get passed to your team. You close. The agent does everything else.',
+    title: 'Your dispatcher just oversees',
+    desc: 'Your team gets a live dashboard showing every trip, driver, and status. They can intervene anytime — but most days, they don\'t need to. They spend their time on exceptions, not on data entry.',
     accent: '#D97706',
     bg: '#FFFBEB',
   },
@@ -53,7 +53,7 @@ export default function HowItWorks() {
               fontWeight: 800,
               color: '#0F172A',
             }}>
-              Research.<br />Personalise.<br />Close.
+              Connect.<br />Assign.<br />Adapt.
             </h2>
           </div>
           <p style={{
@@ -62,12 +62,11 @@ export default function HowItWorks() {
             maxWidth: 360,
             lineHeight: 1.75,
           }}>
-            Your AI SDR runs the full top-of-funnel — from finding the right
-            prospects to handing off warm, qualified conversations to your team.
+            DispatchIQ handles the full scheduling operation — from the moment
+            a trip arrives to the moment a driver completes it.
           </p>
         </div>
 
-        {/* 2x2 grid for 4 steps */}
         <div className="steps-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',

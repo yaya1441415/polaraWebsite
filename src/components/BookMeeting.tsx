@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import { CheckCircle2 } from 'lucide-react'
 
 const perks = [
-  'We show you a live demo built for staffing agencies',
-  'You see real prospect research the agent produces',
-  'We map out your outreach sequences together',
-  'No pitch. No contract. Just a working prototype.',
+  'We show you a live scheduling simulation with real NEMT scenarios',
+  'You see how the agent handles callouts, cancellations, and broker feeds',
+  'We map out what your operation looks like after DispatchIQ',
+  'No pitch. No contract. Just a working demo.',
 ]
 
 export default function BookMeeting() {
@@ -32,7 +32,7 @@ export default function BookMeeting() {
           alignItems: 'center',
         }} className="book-grid">
           <div>
-            <div className="label">Book a Demo</div>
+            <div className="label">Request a Demo</div>
             <h2 style={{
               fontSize: 'clamp(32px, 4vw, 54px)',
               fontWeight: 800,
@@ -40,8 +40,8 @@ export default function BookMeeting() {
               marginBottom: 20,
               lineHeight: 1.1,
             }}>
-              See your AI SDR<br />
-              <span style={{ color: '#2563EB' }}>in action.</span>
+              See DispatchIQ run<br />
+              <span style={{ color: '#2563EB' }}>your schedule live.</span>
             </h2>
             <p style={{
               fontSize: 17,
@@ -50,8 +50,9 @@ export default function BookMeeting() {
               lineHeight: 1.75,
               marginBottom: 32,
             }}>
-              Book a free 30-minute demo. We'll show you exactly how the agent
-              researches, writes, and reaches out — tailored live to your agency's niche.
+              Book a free 30-minute demo built around your operation.
+              We'll show you exactly how DispatchIQ would handle your trips,
+              your drivers, and your daily chaos.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
@@ -61,6 +62,23 @@ export default function BookMeeting() {
                   <span style={{ fontSize: 15, color: '#1E293B', fontWeight: 500, lineHeight: 1.5 }}>{p}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Who it's for */}
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #DBEAFE',
+              borderRadius: 12,
+              padding: '18px 20px',
+              marginBottom: 24,
+            }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#2563EB', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>
+                Who this is for
+              </div>
+              <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.65 }}>
+                Small to mid-size NEMT operators running <strong style={{ color: '#0F172A' }}>6–1892 vehicles</strong> who
+                are done managing their business from a whiteboard and a group text.
+              </p>
             </div>
 
             <div style={{
@@ -74,7 +92,7 @@ export default function BookMeeting() {
             }}>
               <span style={{ fontSize: 16 }}>🔒</span>
               <span style={{ fontSize: 13, color: '#92400E', fontWeight: 700 }}>
-                No meetings booked, no invoice. Simple as that.
+                No results in your operation, no invoice.
               </span>
             </div>
           </div>

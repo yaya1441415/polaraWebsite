@@ -22,11 +22,11 @@ export default function Navbar() {
           letterSpacing: '-0.03em',
           color: '#0F172A',
         }}>
-          Daka<span style={{ color: '#2563EB' }}>ly</span>
+          Dispatch<span style={{ color: '#2563EB' }}>IQ</span>
         </span>
 
         <a href="#book" className="btn-primary" style={{ padding: '9px 22px', fontSize: 13 }}>
-          Book a Demo
+          Request a Demo
         </a>
       </div>
     </nav>

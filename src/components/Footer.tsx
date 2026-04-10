@@ -18,10 +18,10 @@ export default function Footer() {
           letterSpacing: '-0.03em',
           color: '#FFFFFF',
         }}>
-          Daka<span style={{ color: '#60A5FA' }}>ly</span>
+          Dispatch<span style={{ color: '#60A5FA' }}>IQ</span>
         </span>
         <span style={{ fontSize: 13, color: '#475569' }}>
-          © {new Date().getFullYear()} Dakaly · Made by Yahya
+          © {new Date().getFullYear()} DispatchIQ · The AI Scheduling Agent for NEMT Operators
         </span>
       </div>
     </footer>
