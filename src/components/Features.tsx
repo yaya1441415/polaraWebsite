@@ -1,4 +1,4 @@
-import { Zap, RefreshCw, Bell, BarChart2, Plug, ShieldCheck, LayoutDashboard } from 'lucide-react'
+import { Zap, Bell, BarChart2, Plug, LayoutDashboard } from 'lucide-react'
 
 const features = [
   {
@@ -8,17 +8,11 @@ const features = [
     color: '#2563EB',
     bg: '#EFF6FF',
   },
-  {
-    icon: <RefreshCw size={20} />,
-    title: 'Real-time rescheduling',
-    desc: 'When a driver calls out or a cancellation comes in, DispatchIQ reassigns and re-optimises automatically. Same-day chaos handled without a single phone call.',
-    color: '#0369A1',
-    bg: '#F0F9FF',
-  },
+  
   {
     icon: <Bell size={20} />,
     title: 'Driver notifications',
-    desc: 'Assignments are pushed directly to drivers via SMS or mobile app the moment they\'re made. No dispatcher relay. No missed messages. Drivers always know where they\'re going.',
+    desc: 'Assignments are pushed directly to drivers via SMS the moment they\'re made. No dispatcher relay. No missed messages. Drivers always know where they\'re going.',
     color: '#7C3AED',
     bg: '#F5F3FF',
   },
@@ -37,16 +31,9 @@ const features = [
     bg: '#FFFBEB',
   },
   {
-    icon: <ShieldCheck size={20} />,
-    title: 'Compliance awareness',
-    desc: 'DispatchIQ tracks driver certifications, vehicle compliance, and Medicaid requirements. It never assigns a non-compliant driver to a trip that requires it. Automatically.',
-    color: '#DC2626',
-    bg: '#FEF2F2',
-  },
-  {
     icon: <LayoutDashboard size={20} />,
-    title: 'Dispatcher dashboard',
-    desc: 'Full real-time visibility into every trip, every driver, and every status — on one screen. Your team can override, adjust, or intervene anytime. But most days, they won\'t need to.',
+    title: 'Dispatcher Insight',
+    desc: 'DistpachIq remember how many times this trip hasn t showed and flags it if ther ei s a likelihood of it not showing up.',
     color: '#2563EB',
     bg: '#EFF6FF',
   },
@@ -77,7 +64,7 @@ export default function Features() {
               color: '#0F172A',
               maxWidth: 520,
             }}>
-              Everything your dispatch operation needs.
+              Your Dispatch Operations Has Been Put on Steroids
             </h2>
           </div>
           <p style={{
@@ -86,8 +73,7 @@ export default function Features() {
             maxWidth: 340,
             lineHeight: 1.75,
           }}>
-            Built specifically for NEMT operators running 5–50 vehicles.
-            Not a generic fleet tool. Not a spreadsheet upgrade.
+            Built specifically for NEMT operators running 6–1892 vehicles.
           </p>
         </div>
 

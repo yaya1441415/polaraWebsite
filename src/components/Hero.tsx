@@ -56,9 +56,9 @@ export default function Hero() {
           lineHeight: 1.7,
           marginBottom: 36,
         }}>
-          DispatchIQ is an AI scheduling agent that assigns trips to drivers in real time —
-          handling callouts, last-minute changes, and broker feeds automatically,
-          without a dispatcher lifting a finger.
+          DispatchIQ is an AI scheduling agent for your NEMT fleet.
+          It assigns trips, optimizes routes, and keeps your drivers on time, 24/7, no sick days,
+          no turnover. For $199/month instead of a $70K salary.
         </p>
 
         {/* Pain points */}
@@ -79,7 +79,7 @@ export default function Hero() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 28 }}>
-          <a href="#book" className="btn-primary">
+          <a href="/Demo" className="btn-primary">
             See DispatchIQ in Action <ArrowRight size={16} />
           </a>
           <span style={{ fontSize: 14, color: '#94A3B8' }}>

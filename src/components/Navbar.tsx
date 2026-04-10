@@ -1,3 +1,5 @@
+import Logo from './Logo'
+
 export default function Navbar() {
   return (
     <nav style={{
@@ -15,18 +17,21 @@ export default function Navbar() {
         justifyContent: 'space-between',
         height: 64,
       }}>
-        <span style={{
-          fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 20,
-          fontWeight: 800,
-          letterSpacing: '-0.03em',
-          color: '#0F172A',
-        }}>
-          Dispatch<span style={{ color: '#2563EB' }}>IQ</span>
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <Logo size={36} />
+          <span style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 18,
+            fontWeight: 800,
+            letterSpacing: '-0.03em',
+            color: '#0F172A',
+          }}>
+         
+          </span>
+        </div>
 
-        <a href="#book" className="btn-primary" style={{ padding: '9px 22px', fontSize: 13 }}>
-          Request a Demo
+        <a href="/demo" className="btn-primary" style={{ padding: '9px 22px', fontSize: 13 }}>
+          Demo: See How It Works 
         </a>
       </div>
     </nav>

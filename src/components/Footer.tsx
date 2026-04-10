@@ -1,3 +1,5 @@
+import Logo from './Logo'
+
 export default function Footer() {
   return (
     <footer style={{
@@ -11,15 +13,18 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: 12,
       }}>
-        <span style={{
-          fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 18,
-          fontWeight: 800,
-          letterSpacing: '-0.03em',
-          color: '#FFFFFF',
-        }}>
-          Dispatch<span style={{ color: '#60A5FA' }}>IQ</span>
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <Logo size={32} />
+          <span style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 17,
+            fontWeight: 800,
+            letterSpacing: '-0.03em',
+            color: '#FFFFFF',
+          }}>
+            Dispatch<span style={{ color: '#60A5FA' }}>IQ</span>
+          </span>
+        </div>
         <span style={{ fontSize: 13, color: '#475569' }}>
           © {new Date().getFullYear()} DispatchIQ · The AI Scheduling Agent for NEMT Operators
         </span>
