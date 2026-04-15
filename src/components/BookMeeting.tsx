@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import { CheckCircle2 } from 'lucide-react'
 
 const perks = [
-  'We show you a live scheduling simulation with real NEMT scenarios',
-  'You see how the agent handles callouts, cancellations, and broker feeds',
-  'We map out what your operation looks like after DispatchIQ',
-  'No pitch. No contract. Just a working demo.',
+  'We show you the agent handling a live sales conversation in real time',
+  'You see how it remembers client context and crafts the perfect follow-up',
+  'We map out what your sales pipeline looks like fully automated',
+  'No pitch. No contract. Just a working demo around your leads.',
 ]
 
 export default function BookMeeting() {
@@ -32,16 +32,16 @@ export default function BookMeeting() {
           alignItems: 'center',
         }} className="book-grid">
           <div>
-            <div className="label">Request a Demo</div>
+            <div className="label">Set Up an Appointment</div>
             <h2 style={{
-              fontSize: 'clamp(32px, 4vw, 54px)',
+              fontSize: 'clamp(32px, 4vw, 52px)',
               fontWeight: 800,
               color: '#0F172A',
               marginBottom: 20,
               lineHeight: 1.1,
             }}>
-              See DispatchIQ run<br />
-              <span style={{ color: '#2563EB' }}>your schedule live.</span>
+              See the agent close<br />
+              <span style={{ color: '#2563EB' }}>your leads live.</span>
             </h2>
             <p style={{
               fontSize: 17,
@@ -50,9 +50,9 @@ export default function BookMeeting() {
               lineHeight: 1.75,
               marginBottom: 32,
             }}>
-              Book a free 30-minute demo built around your operation.
-              We'll show you exactly how DispatchIQ would handle your trips,
-              your drivers, and your daily chaos.
+              Book a free 30-minute session. We'll walk you through exactly how
+              the AI agent would handle your specific leads — the messages, the calls,
+              the follow-ups. All automated, all personalised.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
@@ -76,8 +76,8 @@ export default function BookMeeting() {
                 Who this is for
               </div>
               <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.65 }}>
-                Small to mid-size NEMT operators running <strong style={{ color: '#0F172A' }}>6–1892 vehicles</strong> who
-                are done managing their business from a whiteboard and a group text.
+                Sales teams and founders who have leads but not enough salespeople —
+                or whose reps are spending 80% of their time on follow-up instead of closing.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function BookMeeting() {
             }}>
               <span style={{ fontSize: 16 }}>🔒</span>
               <span style={{ fontSize: 13, color: '#92400E', fontWeight: 700 }}>
-                No results in your operation, no invoice.
+                If we don't show clear value in the demo, no conversation about pricing.
               </span>
             </div>
           </div>

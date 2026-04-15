@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
-import Features from './components/Features'
 import BookMeeting from './components/BookMeeting'
 import Footer from './components/Footer'
 import Demo from './pages/Demo'
@@ -15,7 +14,6 @@ function Home() {
       <main>
         <Hero />
         <HowItWorks />
-        <Features />
         <BookMeeting />
       </main>
       <Footer />

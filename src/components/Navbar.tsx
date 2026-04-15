@@ -6,8 +6,8 @@ export default function Navbar() {
       position: 'fixed',
       top: 0, left: 0, right: 0,
       zIndex: 100,
-      borderBottom: '1px solid #E2E8F0',
-      background: 'rgba(255,255,255,0.94)',
+      borderBottom: '1px solid rgba(255,255,255,0.06)',
+      background: 'rgba(3,7,18,0.88)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
     }}>
@@ -24,14 +24,19 @@ export default function Navbar() {
             fontSize: 18,
             fontWeight: 800,
             letterSpacing: '-0.03em',
-            color: '#0F172A',
+            color: '#F1F5F9',
           }}>
-         
+            Close<span style={{ color: '#60A5FA' }}>IQ</span>
           </span>
         </div>
 
-        <a href="/demo" className="btn-primary" style={{ padding: '9px 22px', fontSize: 13 }}>
-          Demo: See How It Works 
+        <a href="#book" className="btn-primary" style={{
+          padding: '9px 22px',
+          fontSize: 13,
+          background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
+          boxShadow: '0 2px 12px rgba(37,99,235,0.35)',
+        }}>
+          Book a Demo
         </a>
       </div>
     </nav>

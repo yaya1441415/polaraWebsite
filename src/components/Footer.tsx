@@ -3,8 +3,9 @@ import Logo from './Logo'
 export default function Footer() {
   return (
     <footer style={{
-      background: '#0F172A',
+      background: '#030712',
       padding: '40px 0',
+      borderTop: '1px solid rgba(255,255,255,0.06)',
     }}>
       <div className="container" style={{
         display: 'flex',
@@ -20,13 +21,13 @@ export default function Footer() {
             fontSize: 17,
             fontWeight: 800,
             letterSpacing: '-0.03em',
-            color: '#FFFFFF',
+            color: '#F1F5F9',
           }}>
-            Dispatch<span style={{ color: '#60A5FA' }}>IQ</span>
+            Close<span style={{ color: '#60A5FA' }}>IQ</span>
           </span>
         </div>
-        <span style={{ fontSize: 13, color: '#475569' }}>
-          © {new Date().getFullYear()} DispatchIQ · The AI Scheduling Agent for NEMT Operators
+        <span style={{ fontSize: 13, color: '#334155' }}>
+          © {new Date().getFullYear()} CloseIQ · AI Sales Agent for Outreach & Closing
         </span>
       </div>
     </footer>
