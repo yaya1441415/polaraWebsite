@@ -1,20 +1,16 @@
-import { ArrowRight, Phone, MessageSquare, Brain } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const particles = [
-  { top: '12%', left: '8%', size: 3, delay: '0s', duration: '4.2s' },
-  { top: '25%', left: '85%', size: 2, delay: '1s', duration: '3.8s' },
-  { top: '60%', left: '6%', size: 4, delay: '0.5s', duration: '5s' },
-  { top: '75%', left: '78%', size: 2, delay: '2s', duration: '4.5s' },
-  { top: '40%', left: '92%', size: 3, delay: '1.5s', duration: '3.5s' },
-  { top: '85%', left: '15%', size: 2, delay: '0.8s', duration: '4.8s' },
-  { top: '18%', left: '55%', size: 2, delay: '3s', duration: '5.2s' },
-  { top: '50%', left: '50%', size: 3, delay: '2.5s', duration: '4s' },
-]
-
-const stats = [
-  { value: '3.2x', label: 'More replies' },
-  { value: '24/7', label: 'Always on' },
-  { value: '68%', label: 'Higher close rate' },
+  { x: '7%',  y: '14%', s: 2, dur: '4.2s', delay: '0s'   },
+  { x: '91%', y: '18%', s: 3, dur: '5.1s', delay: '1s'   },
+  { x: '4%',  y: '68%', s: 2, dur: '6s',   delay: '2s'   },
+  { x: '87%', y: '74%', s: 2, dur: '4.6s', delay: '0.5s' },
+  { x: '48%', y: '4%',  s: 2, dur: '5.4s', delay: '3s'   },
+  { x: '14%', y: '88%', s: 3, dur: '4.9s', delay: '1.5s' },
+  { x: '74%', y: '86%', s: 2, dur: '5.3s', delay: '2.5s' },
+  { x: '94%', y: '48%', s: 2, dur: '4.1s', delay: '4s'   },
+  { x: '30%', y: '92%', s: 2, dur: '5.8s', delay: '0.8s' },
+  { x: '62%', y: '7%',  s: 3, dur: '4.7s', delay: '3.5s' },
 ]
 
 export default function Hero() {
@@ -23,378 +19,188 @@ export default function Hero() {
       minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
       paddingTop: 64,
-      background: 'linear-gradient(135deg, #030712 0%, #080F1F 60%, #030B17 100%)',
+      background: '#020810',
       position: 'relative',
       overflow: 'hidden',
+      textAlign: 'center',
     }}>
       <style>{`
-        @keyframes hero-float {
-          0%, 100% { transform: translateY(0px) scale(1); opacity: 0.5; }
-          50% { transform: translateY(-14px) scale(1.1); opacity: 1; }
+        @keyframes vn-cw   { to { transform: rotate(360deg);  } }
+        @keyframes vn-ccw  { to { transform: rotate(-360deg); } }
+        @keyframes vn-pulse {
+          0%, 100% { opacity: 0.45; transform: scale(1);    }
+          50%       { opacity: 1;   transform: scale(1.14); }
         }
-        @keyframes hero-pulse-glow {
-          0%, 100% { opacity: 0.25; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.06); }
+        @keyframes vn-halo {
+          0%, 100% { opacity: 0.12; transform: scale(1);    }
+          50%       { opacity: 0.28; transform: scale(1.06); }
         }
-        @keyframes hero-orbit-1 {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+        @keyframes vn-dot-breathe {
+          0%, 100% { box-shadow: 0 0 8px currentColor;  }
+          50%       { box-shadow: 0 0 22px currentColor; }
         }
-        @keyframes hero-orbit-2 {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
+        @keyframes vn-particle {
+          0%, 100% { transform: translateY(0);     opacity: 0.5; }
+          50%       { transform: translateY(-22px); opacity: 1;   }
         }
-        @keyframes hero-ping {
-          0% { transform: scale(1); opacity: 0.6; }
-          100% { transform: scale(2.2); opacity: 0; }
+        @keyframes vn-fade-up {
+          from { opacity: 0; transform: translateY(36px); }
+          to   { opacity: 1; transform: translateY(0);    }
         }
-        @keyframes hero-ping2 {
-          0% { transform: scale(1); opacity: 0.4; }
-          100% { transform: scale(2.8); opacity: 0; }
-        }
-        @keyframes hero-fade-up {
-          from { opacity: 0; transform: translateY(28px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes hero-msg-in {
-          0% { opacity: 0; transform: translateX(16px); }
-          15%, 85% { opacity: 1; transform: translateX(0); }
-          100% { opacity: 0; transform: translateX(-8px); }
-        }
-        @keyframes hero-dot-travel {
-          0% { opacity: 0; offset-distance: 0%; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { opacity: 0; offset-distance: 100%; }
-        }
-        @keyframes hero-blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
-        .hero-particle {
-          position: absolute;
-          border-radius: 50%;
-          background: rgba(99, 179, 237, 0.6);
-          animation: hero-float var(--dur) var(--delay) ease-in-out infinite;
-        }
-        .hero-vis-fade {
-          animation: hero-fade-up 0.8s ease-out forwards;
-        }
-        .hero-content-fade {
-          animation: hero-fade-up 0.7s ease-out forwards;
-        }
-        .hero-orbit-ring-1 {
-          animation: hero-orbit-1 8s linear infinite;
-        }
-        .hero-orbit-ring-2 {
-          animation: hero-orbit-2 12s linear infinite;
-        }
-        .hero-ping-1 {
-          animation: hero-ping 2s ease-out infinite;
-        }
-        .hero-ping-2 {
-          animation: hero-ping2 2s ease-out 1s infinite;
-        }
-        .hero-msg-bubble {
-          animation: hero-msg-in 4s ease-in-out infinite;
-        }
-        .hero-msg-bubble:nth-child(2) { animation-delay: 1.3s; }
-        .hero-msg-bubble:nth-child(3) { animation-delay: 2.6s; }
-        .hero-call-blink {
-          animation: hero-blink 1.2s ease-in-out infinite;
-        }
+        .vn-in-1 { animation: vn-fade-up 0.9s ease-out forwards; }
+        .vn-in-2 { animation: vn-fade-up 0.9s 0.18s ease-out both; }
+        .vn-in-3 { animation: vn-fade-up 0.9s 0.34s ease-out both; }
       `}</style>
 
-      {/* Floating particles */}
-      {particles.map((p, i) => (
-        <div key={i} className="hero-particle" style={{
-          top: p.top, left: p.left,
-          width: p.size, height: p.size,
-          ['--dur' as string]: p.duration,
-          ['--delay' as string]: p.delay,
-        }} />
-      ))}
-
-      {/* Large background glow */}
+      {/* ---- Orbital ring system ---- */}
       <div style={{
         position: 'absolute',
-        top: '20%', right: '-5%',
-        width: 700, height: 700,
-        background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)',
+        top: '50%', left: '50%',
         pointerEvents: 'none',
-        animation: 'hero-pulse-glow 6s ease-in-out infinite',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '-10%', left: '-5%',
-        width: 500, height: 500,
-        background: 'radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 65%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div className="container" style={{ position: 'relative', padding: '80px 24px' }}>
+        zIndex: 1,
+      }}>
+        {/* Core pulse */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 60,
-          alignItems: 'center',
-        }} className="hero-grid">
+          position: 'absolute',
+          width: 130, height: 130,
+          marginLeft: -65, marginTop: -65,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.65) 0%, rgba(59,130,246,0.1) 55%, transparent 75%)',
+          animation: 'vn-pulse 3.2s ease-in-out infinite',
+        }} />
 
-          {/* Left content */}
-          <div className="hero-content-fade">
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 6,
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: '#60A5FA',
-              background: 'rgba(37,99,235,0.12)',
-              border: '1px solid rgba(96,165,250,0.2)',
-              padding: '5px 14px',
-              borderRadius: 100,
-              marginBottom: 28,
-            }}>
-              AI Sales Agent
-            </div>
+        {/* Halo glow */}
+        <div style={{
+          position: 'absolute',
+          width: 380, height: 380,
+          marginLeft: -190, marginTop: -190,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)',
+          animation: 'vn-halo 4s ease-in-out 1.2s infinite',
+        }} />
 
-            <h1 style={{
-              fontSize: 'clamp(38px, 5vw, 68px)',
-              fontWeight: 800,
-              color: '#F1F5F9',
-              maxWidth: 600,
-              marginBottom: 22,
-              lineHeight: 1.07,
-              letterSpacing: '-0.03em',
-            }}>
-              Your sales agent{' '}
-              <span style={{
-                background: 'linear-gradient(135deg, #60A5FA, #818CF8)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                calls, follows up
-              </span>
-              {' '}& closes — automatically.
-            </h1>
+        {/* Ring 1 — inner 250px, CW 9s */}
+        <div style={{
+          position: 'absolute',
+          width: 250, height: 250,
+          marginLeft: -125, marginTop: -125,
+          borderRadius: '50%',
+          border: '1.5px solid rgba(96,165,250,0.28)',
+          animation: 'vn-cw 9s linear infinite',
+        }}>
+          <div style={{ position: 'absolute', top: -6, left: 'calc(50% - 6px)', width: 12, height: 12, borderRadius: '50%', background: '#60A5FA', color: '#60A5FA', boxShadow: '0 0 16px #60A5FA, 0 0 6px #3B82F6', animation: 'vn-dot-breathe 2s ease-in-out infinite' }} />
+          <div style={{ position: 'absolute', bottom: -5, left: 'calc(50% - 5px)', width: 10, height: 10, borderRadius: '50%', background: '#93C5FD', color: '#93C5FD', boxShadow: '0 0 12px #93C5FD' }} />
+        </div>
 
-            <p style={{
-              fontSize: 17,
-              color: '#94A3B8',
-              maxWidth: 480,
-              lineHeight: 1.75,
-              marginBottom: 40,
-            }}>
-              Add your leads. The AI agent takes over — sending the right message at the right time,
-              remembering every detail about each client, answering their calls, and reaching out
-              until the deal is closed.
-            </p>
+        {/* Ring 2 — middle 420px, CCW 16s */}
+        <div style={{
+          position: 'absolute',
+          width: 420, height: 420,
+          marginLeft: -210, marginTop: -210,
+          borderRadius: '50%',
+          border: '1px dashed rgba(129,140,248,0.22)',
+          animation: 'vn-ccw 16s linear infinite',
+        }}>
+          <div style={{ position: 'absolute', top: -6, left: 'calc(50% - 6px)', width: 12, height: 12, borderRadius: '50%', background: '#818CF8', color: '#818CF8', boxShadow: '0 0 18px rgba(129,140,248,0.95)', animation: 'vn-dot-breathe 2.4s ease-in-out 0.5s infinite' }} />
+          <div style={{ position: 'absolute', top: '18%', right: -5, width: 8, height: 8, borderRadius: '50%', background: '#60A5FA', boxShadow: '0 0 12px #60A5FA' }} />
+          <div style={{ position: 'absolute', bottom: -5, left: '28%', width: 7, height: 7, borderRadius: '50%', background: '#A5B4FC', boxShadow: '0 0 10px #A5B4FC' }} />
+        </div>
 
-            {/* Stats row */}
-            <div style={{
-              display: 'flex',
-              gap: 32,
-              marginBottom: 44,
-              flexWrap: 'wrap',
-            }}>
-              {stats.map(s => (
-                <div key={s.label}>
-                  <div style={{
-                    fontSize: 28,
-                    fontWeight: 800,
-                    color: '#F1F5F9',
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    letterSpacing: '-0.03em',
-                  }}>{s.value}</div>
-                  <div style={{ fontSize: 13, color: '#64748B', fontWeight: 500, marginTop: 2 }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-              <a href="#book" className="btn-primary" style={{
-                background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
-                boxShadow: '0 4px 24px rgba(37,99,235,0.4)',
-              }}>
-                Book a Demo <ArrowRight size={16} />
-              </a>
-              <span style={{ fontSize: 13, color: '#475569' }}>
-                Free 30-min session · No commitment
-              </span>
-            </div>
-          </div>
-
-          {/* Right - animated visualization */}
-          <div className="hero-vis-fade" style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-            <div style={{
-              position: 'relative',
-              width: 340,
-              height: 380,
-            }}>
-              {/* Central AI hub */}
-              <div style={{
-                position: 'absolute',
-                top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 10,
-              }}>
-                {/* Ping rings */}
-                <div className="hero-ping-1" style={{
-                  position: 'absolute',
-                  inset: -20,
-                  borderRadius: '50%',
-                  border: '1.5px solid rgba(96,165,250,0.4)',
-                  pointerEvents: 'none',
-                }} />
-                <div className="hero-ping-2" style={{
-                  position: 'absolute',
-                  inset: -20,
-                  borderRadius: '50%',
-                  border: '1.5px solid rgba(129,140,248,0.3)',
-                  pointerEvents: 'none',
-                }} />
-                {/* Hub circle */}
-                <div style={{
-                  width: 72,
-                  height: 72,
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #1D4ED8, #4F46E5)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 0 40px rgba(37,99,235,0.5), 0 0 80px rgba(79,70,229,0.2)',
-                  border: '2px solid rgba(255,255,255,0.15)',
-                }}>
-                  <Brain size={28} color="#fff" />
-                </div>
-              </div>
-
-              {/* Orbit ring 1 */}
-              <div className="hero-orbit-ring-1" style={{
-                position: 'absolute',
-                top: '50%', left: '50%',
-                width: 180, height: 180,
-                marginTop: -90, marginLeft: -90,
-                borderRadius: '50%',
-                border: '1px dashed rgba(96,165,250,0.2)',
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  top: -6, left: '50%',
-                  marginLeft: -6,
-                  width: 12, height: 12,
-                  borderRadius: '50%',
-                  background: '#60A5FA',
-                  boxShadow: '0 0 12px rgba(96,165,250,0.8)',
-                }} />
-              </div>
-
-              {/* Orbit ring 2 */}
-              <div className="hero-orbit-ring-2" style={{
-                position: 'absolute',
-                top: '50%', left: '50%',
-                width: 260, height: 260,
-                marginTop: -130, marginLeft: -130,
-                borderRadius: '50%',
-                border: '1px dashed rgba(129,140,248,0.15)',
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  bottom: -5, left: '30%',
-                  width: 10, height: 10,
-                  borderRadius: '50%',
-                  background: '#818CF8',
-                  boxShadow: '0 0 10px rgba(129,140,248,0.8)',
-                }} />
-                <div style={{
-                  position: 'absolute',
-                  top: '20%', right: -5,
-                  width: 8, height: 8,
-                  borderRadius: '50%',
-                  background: '#34D399',
-                  boxShadow: '0 0 8px rgba(52,211,153,0.8)',
-                }} />
-              </div>
-
-              {/* Floating message cards */}
-              <div className="hero-msg-bubble" style={{
-                position: 'absolute',
-                top: 20, right: 0,
-                background: 'rgba(30,41,59,0.9)',
-                border: '1px solid rgba(96,165,250,0.25)',
-                borderRadius: 12,
-                padding: '10px 14px',
-                backdropFilter: 'blur(12px)',
-                maxWidth: 160,
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 5 }}>
-                  <MessageSquare size={11} color="#60A5FA" />
-                  <span style={{ fontSize: 10, color: '#60A5FA', fontWeight: 700, letterSpacing: '0.05em' }}>MESSAGE SENT</span>
-                </div>
-                <p style={{ fontSize: 11, color: '#CBD5E1', lineHeight: 1.5 }}>
-                  "Hi Sarah, following up on our last call — I have something perfect for you."
-                </p>
-              </div>
-
-              <div className="hero-msg-bubble" style={{
-                animationDelay: '1.4s',
-                position: 'absolute',
-                bottom: 30, left: 0,
-                background: 'rgba(30,41,59,0.9)',
-                border: '1px solid rgba(52,211,153,0.25)',
-                borderRadius: 12,
-                padding: '10px 14px',
-                backdropFilter: 'blur(12px)',
-                maxWidth: 155,
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 5 }}>
-                  <Phone size={11} color="#34D399" />
-                  <span style={{ fontSize: 10, color: '#34D399', fontWeight: 700, letterSpacing: '0.05em' }}>CALL ANSWERED</span>
-                </div>
-                <p style={{ fontSize: 11, color: '#CBD5E1', lineHeight: 1.5 }}>
-                  Agent answered, remembered objection from 3 weeks ago.
-                </p>
-              </div>
-
-              {/* Live call indicator */}
-              <div style={{
-                position: 'absolute',
-                top: '50%', right: -10,
-                transform: 'translateY(-50%)',
-                background: 'rgba(30,41,59,0.9)',
-                border: '1px solid rgba(52,211,153,0.3)',
-                borderRadius: 10,
-                padding: '8px 12px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-              }}>
-                <div className="hero-call-blink" style={{
-                  width: 8, height: 8,
-                  borderRadius: '50%',
-                  background: '#34D399',
-                  boxShadow: '0 0 6px #34D399',
-                }} />
-                <span style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600 }}>12 active</span>
-              </div>
-            </div>
-          </div>
+        {/* Ring 3 — outer 610px, CW 26s */}
+        <div style={{
+          position: 'absolute',
+          width: 610, height: 610,
+          marginLeft: -305, marginTop: -305,
+          borderRadius: '50%',
+          border: '1px dashed rgba(59,130,246,0.1)',
+          animation: 'vn-cw 26s linear infinite',
+        }}>
+          <div style={{ position: 'absolute', top: -5, left: '38%', width: 9, height: 9, borderRadius: '50%', background: '#3B82F6', boxShadow: '0 0 12px #3B82F6', opacity: 0.75 }} />
+          <div style={{ position: 'absolute', bottom: -4, right: '22%', width: 7, height: 7, borderRadius: '50%', background: '#60A5FA', opacity: 0.55 }} />
+          <div style={{ position: 'absolute', top: '58%', left: -4, width: 6, height: 6, borderRadius: '50%', background: '#818CF8', opacity: 0.6 }} />
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 780px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-          .hero-grid > div:last-child { display: none; }
-        }
-      `}</style>
+      {/* Floating particles */}
+      {particles.map((p, i) => (
+        <div key={i} style={{
+          position: 'absolute',
+          top: p.y, left: p.x,
+          width: p.s, height: p.s,
+          borderRadius: '50%',
+          background: '#60A5FA',
+          opacity: 0.45,
+          animation: `vn-particle ${p.dur} ${p.delay} ease-in-out infinite`,
+          pointerEvents: 'none',
+          zIndex: 1,
+        }} />
+      ))}
+
+      {/* Content */}
+      <div style={{ position: 'relative', zIndex: 10, padding: '0 24px', maxWidth: 800 }}>
+
+        {/* Logo + name */}
+        <div className="vn-in-1" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 14, marginBottom: 52,
+        }}>
+          <div style={{
+            width: 48, height: 48, borderRadius: 13,
+            background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 0 28px rgba(59,130,246,0.5)',
+          }}>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 25, fontWeight: 800, color: '#fff', lineHeight: 1 }}>V</span>
+          </div>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, fontWeight: 800, letterSpacing: '-0.03em', color: '#F1F5F9' }}>
+            Vigor<span style={{ color: '#60A5FA' }}>Node</span>
+          </span>
+        </div>
+
+        {/* Slogan */}
+        <div className="vn-in-2">
+          <h1 style={{
+            fontSize: 'clamp(50px, 9vw, 108px)',
+            fontWeight: 800, lineHeight: 1.0,
+            letterSpacing: '-0.04em', color: '#F1F5F9', marginBottom: 0,
+          }}>
+            One Trainer.
+          </h1>
+          <h1 style={{
+            fontSize: 'clamp(50px, 9vw, 108px)',
+            fontWeight: 800, lineHeight: 1.0,
+            letterSpacing: '-0.04em', marginBottom: 36,
+            background: 'linear-gradient(135deg, #3B82F6, #818CF8)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
+            Unlimited Clients.
+          </h1>
+          <p style={{
+            fontSize: 18, color: '#475569', lineHeight: 1.75,
+            maxWidth: 460, margin: '0 auto 48px auto',
+          }}>
+            Train your AI agent once — it coaches your clients 24/7,
+            in your voice, with your methodology.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="vn-in-3">
+          <a href="#book" className="btn-primary" style={{
+            background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)',
+            boxShadow: '0 4px 28px rgba(59,130,246,0.45)',
+            fontSize: 16, padding: '15px 36px',
+          }}>
+            Book a Call <ArrowRight size={17} />
+          </a>
+          <div style={{ marginTop: 16, fontSize: 13, color: '#1E293B' }}>
+            Free 30 min · No commitment
+          </div>
+        </div>
+
+      </div>
     </section>
   )
 }

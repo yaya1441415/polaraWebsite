@@ -18,7 +18,7 @@ export default function Navbar() {
         height: 64,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <Logo size={36} />
+          <Logo size={34} />
           <span style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: 18,
@@ -26,17 +26,17 @@ export default function Navbar() {
             letterSpacing: '-0.03em',
             color: '#F1F5F9',
           }}>
-            Close<span style={{ color: '#60A5FA' }}>IQ</span>
+            Vigor<span style={{ color: '#60A5FA' }}>Node</span>
           </span>
         </div>
 
         <a href="#book" className="btn-primary" style={{
           padding: '9px 22px',
           fontSize: 13,
-          background: 'linear-gradient(135deg, #2563EB, #4F46E5)',
+          background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)',
           boxShadow: '0 2px 12px rgba(37,99,235,0.35)',
         }}>
-          Book a Demo
+          Book a Call
         </a>
       </div>
     </nav>
