@@ -147,11 +147,16 @@ export default function Hero() {
         }}>
           <div style={{
             width: 48, height: 48, borderRadius: 13,
-            background: 'linear-gradient(135deg, #1D4ED8, #3B82F6)',
+            background: 'linear-gradient(145deg, #0A0F1E, #0F172A)',
+            border: '1.5px solid rgba(59,130,246,0.35)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 0 28px rgba(59,130,246,0.5)',
+            boxShadow: '0 0 24px rgba(59,130,246,0.3), inset 0 1px 0 rgba(255,255,255,0.06)',
+            position: 'relative', overflow: 'hidden',
           }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 25, fontWeight: 800, color: '#fff', lineHeight: 1 }}>V</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 800, lineHeight: 1, letterSpacing: '-0.04em' }}>
+              <span style={{ color: '#60A5FA' }}>V</span>
+              <span style={{ color: '#F1F5F9' }}>N</span>
+            </span>
           </div>
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, fontWeight: 800, letterSpacing: '-0.03em', color: '#F1F5F9' }}>
             Vigor<span style={{ color: '#60A5FA' }}>Node</span>
