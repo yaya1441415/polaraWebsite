@@ -1,11 +1,11 @@
 import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import Nightmare from '@/components/sections/Nightmare'
-import HowItWorks from '@/components/HowItWorks'
-import ClientProof from '@/components/sections/ClientProof'
-import Pricing from '@/components/sections/Pricing'
-import Testimonials from '@/components/sections/Testimonials'
-import Objections from '@/components/sections/Objections'
+import Hero from '@/components/sections/Hero'
+import Problem from '@/components/sections/Problem'
+import HowItWorks from '@/components/sections/HowItWorks'
+import DemoVideo from '@/components/sections/DemoVideo'
+import WhatYouGet from '@/components/sections/WhatYouGet'
+import Guarantee from '@/components/sections/Guarantee'
+import Founder from '@/components/sections/Founder'
 import FinalCTA from '@/components/sections/FinalCTA'
 import Footer from '@/components/Footer'
 
@@ -15,12 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Nightmare />
+        <Problem />
         <HowItWorks />
-        <ClientProof />
-        <Pricing />
-        <Testimonials />
-        <Objections />
+        <DemoVideo />
+        <WhatYouGet />
+        <Guarantee />
+        <Founder />
         <FinalCTA />
       </main>
       <Footer />

@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useBooking } from './BookingContext'
 
-// Replace with your actual Calendly event URL
 const CALENDLY_URL =
-  'https://calendly.com/yahyaouchch/chatbot-insurance?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=1B2B5E'
+  'https://calendly.com/yahyaouchch/chatbot-insurance?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2563EB'
 
 export default function BookingModal() {
   const { open, closeModal } = useBooking()
@@ -33,13 +32,11 @@ export default function BookingModal() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
         >
-          {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeModal}
           />
 
-          {/* Modal panel */}
           <motion.div
             className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -47,11 +44,10 @@ export default function BookingModal() {
             exit={{ opacity: 0, scale: 0.96, y: 12 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 shrink-0">
               <div>
-                <h2 className="text-base font-black text-gray-900">Book your 15-minute call</h2>
-                <p className="text-sm text-gray-500 mt-0.5">Pick a time — no commitment, no credit card.</p>
+                <h2 className="text-base font-bold text-[#1E2A4A]">Book your free strategy call</h2>
+                <p className="text-sm text-gray-400 mt-0.5">20 minutes · No obligation · You don't pay until you see results.</p>
               </div>
               <button
                 onClick={closeModal}
@@ -62,10 +58,9 @@ export default function BookingModal() {
               </button>
             </div>
 
-            {/* Calendly inline embed */}
             <iframe
               src={CALENDLY_URL}
-              title="Schedule a 15-minute call with Showedly"
+              title="Book your free 20-minute strategy consultation with netsolution.ai"
               className="w-full border-0"
               style={{ height: '600px' }}
             />
